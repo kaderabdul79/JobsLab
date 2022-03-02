@@ -4,12 +4,12 @@ import Companies from './components/Companies';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import JobLists from './components/JobLists';
-import FloatingBtn from './components/JobPost/FloatingBtn';
 import JobProcess from './components/JobProcess';
 import Leads from './components/Leads';
 import Navbar from './components/Navbar';
 import NewsLetter from './components/NewsLetter';
 import Testimonial from './components/Testimonial';
+import PostJob from './components/PostJob';
 
 const App = () => {
   return (
@@ -32,7 +32,7 @@ const App = () => {
       <Testimonial />
       <NewsLetter />
       <Footer />
-      <FloatingBtn />
+      <PostJob />
     </div>
   );
 };
