@@ -6,6 +6,7 @@ import JobLists from './components/JobLists';
 import JobProcess from './components/JobProcess';
 import Leads from './components/Leads';
 import Navbar from './components/Navbar';
+import NewsLetter from './components/NewsLetter';
 import Testimonial from './components/Testimonial';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
         <Candidates />
       </Container>
       <Testimonial />
+      <NewsLetter />
     </div>
   );
 };
