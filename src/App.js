@@ -1,6 +1,7 @@
 import { Container } from '@mui/material';
 import Candidates from './components/Candidates';
 import Companies from './components/Companies';
+import Footer from './components/Footer';
 import Hero from './components/Hero';
 import JobLists from './components/JobLists';
 import JobProcess from './components/JobProcess';
@@ -29,6 +30,7 @@ const App = () => {
       </Container>
       <Testimonial />
       <NewsLetter />
+      <Footer />
     </div>
   );
 };
