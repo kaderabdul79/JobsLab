@@ -4,6 +4,7 @@ import Companies from './components/Companies';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import JobLists from './components/JobLists';
+import FloatingBtn from './components/JobPost/FloatingBtn';
 import JobProcess from './components/JobProcess';
 import Leads from './components/Leads';
 import Navbar from './components/Navbar';
@@ -31,6 +32,7 @@ const App = () => {
       <Testimonial />
       <NewsLetter />
       <Footer />
+      <FloatingBtn />
     </div>
   );
 };
