@@ -46,18 +46,46 @@ const PostJob = () => {
                 </UserBox>
                 <TextField
                 sx={{ width: "100%" }}
+                id="standard-size-normal"
+                placeholder="Enter job title"
+                variant="standard"
+                />
+                <TextField
+                sx={{ width: "50%" }}
+                id="standard-select-currency-native"
+                select
+                label="select category"
+                // value={currency}
+                // onChange={handleChange}
+                // SelectProps={{
+                //     native: true,
+                // }}
+                // helperText="Please select your currency"
+                variant="standard"
+                >
+                    
+                {/* {currencies.map((option) => (
+                    <option key={option.value} value={option.value}>
+                    {option.label}
+                    </option>
+                ))} */}
+                </TextField>
+                <TextField
+                sx={{ width: "50%" }}
+                id="standard-select-currency-native"
+                select
+                label="select area"
+                variant="standard"
+                >
+                </TextField>
+                <TextField
+                sx={{ width: "100%" }}
                 id="standard-multiline-static"
                 multiline
                 rows={3}
-                placeholder="Enter job Title"
+                placeholder="Enter job description"
                 variant="standard"
                 />
-                <Stack direction="row" gap={1} mt={2} mb={3}>
-                {/* <EmojiEmotions color="primary" />
-                <Image color="secondary" />
-                <VideoCameraBack color="success" />
-                <PersonAdd color="error" /> */}
-                </Stack>
                 <ButtonGroup
                 fullWidth
                 variant="contained"

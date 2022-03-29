@@ -1,38 +1,25 @@
-import { Container } from '@mui/material';
-import Candidates from './components/Candidates';
-import Companies from './components/Companies';
-import Footer from './components/Footer';
-import Hero from './components/Hero';
-import JobLists from './components/JobLists';
-import JobProcess from './components/JobProcess';
-import Leads from './components/Leads';
+import { Routes, Route, Link } from "react-router-dom";
+import About from './pages/About';
+import Home from "./pages/Home";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
 import Navbar from './components/Navbar';
-import NewsLetter from './components/NewsLetter';
-import Testimonial from './components/Testimonial';
-import PostJob from './components/PostJob';
+import Footer from './components/Footer';
+import Jobs from "./pages/Jobs";
+
 
 const App = () => {
   return (
     <div>
-      
-        <Navbar />
-        <Hero />
-        <Companies />
-        <JobProcess />
-
-        <Container maxWidth="xl" sx={{bgcolor: "#F7FAFF",paddingY:4}}>
-          <Leads />
-        </Container>
-
-        <JobLists />
-      
-      <Container maxWidth="xl" sx={{bgcolor: "#F7FAFF",paddingY:8}}>
-        <Candidates />
-      </Container>
-      <Testimonial />
-      <NewsLetter />
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="jobs" element={<Jobs />} />
+          <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="contact" element={<Contact />} />
+        </Routes>
       <Footer />
-      <PostJob />
     </div>
   );
 };

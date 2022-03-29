@@ -1,4 +1,4 @@
-import { AppBar, Button, Collapse, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Toolbar } from '@mui/material';
+import { AppBar, Button, Collapse, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Toolbar, Link } from '@mui/material';
 import {Drafts, ExpandLess, ExpandMore, Inbox, Menu, Send, StarBorder} from '@mui/icons-material';
 import { useState } from 'react';
 
@@ -16,19 +16,25 @@ const DrawerBar = ({openDrawer,toggleDrawer}) => {
             <ListItemIcon>
             <Send />
             </ListItemIcon>
-            <ListItemText primary="Home" />
+            <Link href="jobs" underline="none"><ListItemText primary="Jobs" /></Link>
             </ListItemButton>
             <ListItemButton>
             <ListItemIcon>
             <Drafts />
             </ListItemIcon>
-            <ListItemText primary="About" />
+            <Link href="blog" underline="none"><ListItemText primary="Blog" /></Link>
             </ListItemButton>
             <ListItemButton>
             <ListItemIcon>
             <Drafts />
             </ListItemIcon>
-            <ListItemText primary="Blog" />
+            <Link href="about" underline="none"><ListItemText primary="About" /></Link>
+            </ListItemButton>
+            <ListItemButton>
+            <ListItemIcon>
+            <Drafts />
+            </ListItemIcon>
+            <Link href="contact" underline="none"><ListItemText primary="Contact" /></Link>
             </ListItemButton>
             <ListItemButton onClick={handleNestedList}>
             <ListItemIcon>
@@ -43,7 +49,7 @@ const DrawerBar = ({openDrawer,toggleDrawer}) => {
                 <ListItemIcon>
                 <StarBorder />
                 </ListItemIcon>
-                <ListItemText primary="Starred" />
+                <ListItemText primary="Logout" />
             </ListItemButton>
             </List>
             </Collapse>

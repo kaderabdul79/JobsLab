@@ -1,4 +1,4 @@
-import { AppBar, Button, Collapse, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Toolbar, Container } from '@mui/material';
+import { AppBar, Button, Collapse, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Toolbar, Container, Link } from '@mui/material';
 import {Drafts, ExpandLess, ExpandMore, Inbox, Menu, Send, StarBorder} from '@mui/icons-material';
 import Typography from '@mui/material/Typography';
 import styled from '@emotion/styled';
@@ -21,16 +21,16 @@ const Navbar = () => {
         <AppBar position="sticky" sx={{bgcolor: 'background.paper',color:'black',boxShadow: 0}}>
             <Container maxWidth="lg">
             <StyledToolbar>
-                <Typography variant='h6' marginRight='5px'>JobLab.</Typography>
+                <Link href="/" underline="none"><Typography variant='h6' marginRight='5px'>JobLab.</Typography></Link>
+                
                
                 <Box sx={{ display: {xs:"none",sm:"block"} }}>
                     <Box sx={{display: 'flex',gap:5,alignItems:'center'}}>
-                    <Typography variant='span'>Home</Typography>
-                    <Typography variant='span'>About</Typography>
-                    <Typography variant='span'>Job</Typography>
-                    <Typography variant='span'>Blog</Typography>
-                    <Typography variant='span'>Contact</Typography>
-
+                    <Link href="jobs" underline="none"><Typography variant='span'>Jobs</Typography></Link>
+                    <Link href="blog" underline="none"><Typography variant='span'>Blog</Typography></Link>
+                    <Link href="about" underline="none"><Typography variant='span'>About</Typography></Link>
+                    <Link href="contact" underline="none"><Typography variant='span'>Contact</Typography></Link>
+                    
                     <Button disableElevation variant="contained">Find Job</Button>
                     {/* <Menu  onClick={()=>toggleDrawer(true)} /> */}
                     </Box>
