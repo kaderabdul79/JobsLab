@@ -1,10 +1,11 @@
-import React from 'react';
+import { Container} from '@mui/material';
+import JobLists from '../components/JobLists';
 
 const Jobs = () => {
     return (
-        <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, corporis?
-        </div>
+        <Container maxWidth="xl" sx={{bgcolor: "#F7FAFF",paddingY:2}}>
+                <JobLists />
+        </Container>
     );
 };
 
