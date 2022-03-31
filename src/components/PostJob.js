@@ -20,7 +20,7 @@ const PostJob = () => {
     const [open,setOpen] = useState(false)
     return (
         <Box>
-            <Tooltip onClick={(e)=>setOpen(true)} title="Add" sx={{position:'fixed',top:'90vh',left: {xs: "calc(50% - 10px)", md: 10 }}}>
+            <Tooltip onClick={(e)=>setOpen(true)} title="Add" sx={{position:'fixed',top:'80vh',left: {xs: "calc(50% - 10px)", md: 10 }}}>
                 <Fab color="primary" aria-label="post job">
                     <AddIcon />
                 </Fab>

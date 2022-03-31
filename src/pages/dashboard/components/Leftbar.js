@@ -1,4 +1,4 @@
-import { Delete, Home, Message, ModeNight, Pets, Shop, Store } from "@mui/icons-material";
+import { AccountCircle, Add, BarChart, ClearAll, Delete, Home, Message, ModeNight, Pets, Shop, Store } from "@mui/icons-material";
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from "@mui/material";
 import React from "react";
 
@@ -10,7 +10,7 @@ const LeftBar = () => {
           <ListItem disablePadding>
             <ListItemButton component="a" href="stats">
               <ListItemIcon>
-                <Home />
+                <BarChart />
               </ListItemIcon>
               <ListItemText primary="Stats" />
             </ListItemButton>
@@ -18,7 +18,7 @@ const LeftBar = () => {
           <ListItem disablePadding>
             <ListItemButton component="a" href="alljob">
               <ListItemIcon>
-                <Shop />
+                <ClearAll />
               </ListItemIcon>
               <ListItemText primary="All Job" />
             </ListItemButton>
@@ -26,7 +26,7 @@ const LeftBar = () => {
           <ListItem disablePadding>
             <ListItemButton component="a" href="addjob">
               <ListItemIcon>
-                <Message />
+                <Add />
               </ListItemIcon>
               <ListItemText primary="Add Job" />
             </ListItemButton>
@@ -34,7 +34,7 @@ const LeftBar = () => {
           <ListItem disablePadding>
             <ListItemButton component="a" href="profile">
               <ListItemIcon>
-                <Store />
+                <AccountCircle />
               </ListItemIcon>
               <ListItemText primary="Profile" />
             </ListItemButton>
