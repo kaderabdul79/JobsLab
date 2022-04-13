@@ -7,11 +7,14 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Jobs from "./pages/Jobs";
 import Dashboard from "./pages/dashboard/Dashboard";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import AuthProvider from "./context/AuthProvider/AuthProvider";
 
 
 const App = () => {
   return (
-    <div>
+    <AuthProvider>
       {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,10 +22,12 @@ const App = () => {
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
         </Routes>
       {/* <Footer /> */}
-    </div>
+    </AuthProvider>
   );
 };
 

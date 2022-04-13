@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import { Box } from '@mui/system';
 import DrawerBar from './DrawerBar';
 import { useState } from 'react';
+import useAuth from '../hooks/useAuth';
 
 const StyledToolbar = styled(Toolbar)({
     display: "flex",
@@ -12,6 +13,8 @@ const StyledToolbar = styled(Toolbar)({
 })
 
 const Navbar = () => {
+    const { user, logout } = useAuth();
+
     const [openDrawer, setOpenDrawer] = useState(false)
     const toggleDrawer = (e) => {
         setOpenDrawer(e);
@@ -31,13 +34,20 @@ const Navbar = () => {
                     <Link href="about" underline="none"><Typography variant='span'>About</Typography></Link>
                     <Link href="contact" underline="none"><Typography variant='span'>Contact</Typography></Link>
                     
-                    <Button disableElevation variant="contained">Find Job</Button>
+                    {/* <Link href="login" underline="none"><Button disableElevation variant="contained">Login</Button></Link> */}
+                    {
+                        user?.email ?
+                            <Button onClick={logout} color="inherit">Logout</Button>
+                            :
+                            <Link href="login" underline="none"><Button disableElevation variant="contained">Login</Button></Link>
+                    }
                     {/* <Menu  onClick={()=>toggleDrawer(true)} /> */}
                     </Box>
                 </Box>
                 <Menu onClick={()=>toggleDrawer(true)} sx={{ display: {xs:"block",sm:"none"} }} />
                 <DrawerBar openDrawer={openDrawer} toggleDrawer={toggleDrawer} />
-
+                {/*  */}
+                
             </StyledToolbar>
             </Container> 
         </AppBar>

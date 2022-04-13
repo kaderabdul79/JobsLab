@@ -14,7 +14,7 @@ import PostJob from '../components/PostJob';
 const Home = () => {
     return (
         <div>
-            {/* <Navbar /> */}
+            <Navbar />
             <Hero />
             <Companies />
             <JobProcess />
@@ -30,7 +30,7 @@ const Home = () => {
             </Container>
             <Testimonial />
             <NewsLetter />
-            {/* <Footer /> */}
+            <Footer />
             <PostJob />
         </div>
     );
