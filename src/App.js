@@ -10,6 +10,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
 const App = () => {
@@ -18,7 +19,13 @@ const App = () => {
       {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="jobs" element={<Jobs />} />
+          {/* private route */}
+          <Route path="jobs" element={
+            <PrivateRoute>
+              <Jobs />
+            </PrivateRoute>
+          }
+          />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
