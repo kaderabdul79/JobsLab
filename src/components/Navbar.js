@@ -23,7 +23,7 @@ const Navbar = () => {
         <AppBar position="sticky" sx={{bgcolor: 'background.paper',color:'black',boxShadow: 0}}>
             <StyledToolbar>
                 <Typography variant='h6' marginRight='5px'>JobLab.</Typography>
-
+               
                 <Box sx={{ display: {xs:"none",sm:"block"} }}>
                     <Box sx={{display: 'flex',gap:5,alignItems:'center'}}>
                     <Typography variant='span'>Home</Typography>
