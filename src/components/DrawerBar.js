@@ -11,7 +11,7 @@ const DrawerBar = ({openDrawer,toggleDrawer}) => {
         };
     return (
         <Drawer open={openDrawer} onClose={()=>toggleDrawer(false)}>
-        <List sx={{ width: '100%', minWidth: 300, bgcolor: 'background.paper' }} component="nav">
+        <List sx={{ minWidth: {xs:"200px",sm:"250px"}, bgcolor: 'background.paper' }} component="nav">
             <ListItemButton>
             <ListItemIcon>
             <Send />

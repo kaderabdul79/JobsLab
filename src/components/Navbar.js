@@ -19,8 +19,6 @@ const Navbar = () => {
         setOpenDrawer(e);
     }; 
     
-
-
     return (
         <AppBar position="sticky" sx={{bgcolor: 'background.paper',color:'black',boxShadow: 0}}>
             <StyledToolbar>
@@ -35,10 +33,10 @@ const Navbar = () => {
                     <Typography variant='span'>Contact</Typography>
 
                     <Button disableElevation variant="contained">Find Job</Button>
-                    <Menu  onClick={()=>toggleDrawer(true)} />
+                    {/* <Menu  onClick={()=>toggleDrawer(true)} /> */}
                     </Box>
                 </Box>
-                {/* <Menu onClick={()=>toggleDrawer(true)} sx={{ display: {xs:"block",sm:"none"} }} /> */}
+                <Menu onClick={()=>toggleDrawer(true)} sx={{ display: {xs:"block",sm:"none"} }} />
                 <DrawerBar openDrawer={openDrawer} toggleDrawer={toggleDrawer} />
 
             </StyledToolbar>
