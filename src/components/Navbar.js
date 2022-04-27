@@ -19,12 +19,7 @@ const Navbar = () => {
         setOpenDrawer(e);
     }; 
     
-    // Nested List Item
-    const [openNestedList, setOpenNestedList] = useState(true);
 
-    const handleNestedList = () => {
-        setOpenNestedList(!openNestedList);
-    };
 
     return (
         <AppBar position="sticky" sx={{bgcolor: 'background.paper',color:'black',boxShadow: 0}}>
@@ -44,7 +39,7 @@ const Navbar = () => {
                     </Box>
                 </Box>
                 {/* <Menu onClick={()=>toggleDrawer(true)} sx={{ display: {xs:"block",sm:"none"} }} /> */}
-
+                <DrawerBar openDrawer={openDrawer} toggleDrawer={toggleDrawer} />
 
             </StyledToolbar>
         </AppBar>
