@@ -1,4 +1,4 @@
-import { AppBar, Button, Collapse, Container, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Toolbar } from '@mui/material';
+import { AppBar, Button, Collapse, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Toolbar, Container } from '@mui/material';
 import {Drafts, ExpandLess, ExpandMore, Inbox, Menu, Send, StarBorder} from '@mui/icons-material';
 import Typography from '@mui/material/Typography';
 import styled from '@emotion/styled';
@@ -14,35 +14,33 @@ const StyledToolbar = styled(Toolbar)({
 const Navbar = () => {
     const [openDrawer, setOpenDrawer] = useState(false)
     const toggleDrawer = (e) => {
-        // console.log(openDrawer);
-        // console.log(e);
         setOpenDrawer(e);
     }; 
     
     return (
-        <Container maxWidth="lg">
-            <AppBar position="sticky" sx={{bgcolor: 'background.paper',color:'black',boxShadow: 0}}>
-                <StyledToolbar>
-                    <Typography variant='h6' marginRight='5px'>JobLab.</Typography>
-                
-                    <Box sx={{ display: {xs:"none",sm:"block"} }}>
-                        <Box sx={{display: 'flex',gap:5,alignItems:'center'}}>
-                        <Typography variant='span'>Home</Typography>
-                        <Typography variant='span'>About</Typography>
-                        <Typography variant='span'>Job</Typography>
-                        <Typography variant='span'>Blog</Typography>
-                        <Typography variant='span'>Contact</Typography>
+        <AppBar position="sticky" sx={{bgcolor: 'background.paper',color:'black',boxShadow: 0}}>
+            <Container maxWidth="lg">
+            <StyledToolbar>
+                <Typography variant='h6' marginRight='5px'>JobLab.</Typography>
+               
+                <Box sx={{ display: {xs:"none",sm:"block"} }}>
+                    <Box sx={{display: 'flex',gap:5,alignItems:'center'}}>
+                    <Typography variant='span'>Home</Typography>
+                    <Typography variant='span'>About</Typography>
+                    <Typography variant='span'>Job</Typography>
+                    <Typography variant='span'>Blog</Typography>
+                    <Typography variant='span'>Contact</Typography>
 
-                        <Button disableElevation variant="contained">Find Job</Button>
-                        {/* <Menu  onClick={()=>toggleDrawer(true)} /> */}
-                        </Box>
+                    <Button disableElevation variant="contained">Find Job</Button>
+                    {/* <Menu  onClick={()=>toggleDrawer(true)} /> */}
                     </Box>
-                    <Menu onClick={()=>toggleDrawer(true)} sx={{ display: {xs:"block",sm:"none"} }} />
-                    <DrawerBar openDrawer={openDrawer} toggleDrawer={toggleDrawer} />
+                </Box>
+                <Menu onClick={()=>toggleDrawer(true)} sx={{ display: {xs:"block",sm:"none"} }} />
+                <DrawerBar openDrawer={openDrawer} toggleDrawer={toggleDrawer} />
 
-                </StyledToolbar>
-            </AppBar>
-        </Container>
+            </StyledToolbar>
+            </Container> 
+        </AppBar>
     );
 };
 

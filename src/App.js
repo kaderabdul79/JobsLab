@@ -6,6 +6,7 @@ import JobLists from './components/JobLists';
 import JobProcess from './components/JobProcess';
 import Leads from './components/Leads';
 import Navbar from './components/Navbar';
+import Testimonial from './components/Testimonial';
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
       <Container maxWidth="xl" sx={{bgcolor: "#F7FAFF",paddingY:8}}>
         <Candidates />
       </Container>
-      
+      <Testimonial />
     </div>
   );
 };
