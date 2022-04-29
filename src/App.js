@@ -1,6 +1,7 @@
 import { Container } from '@mui/material';
 import Companies from './components/Companies';
 import Hero from './components/Hero';
+import JobLists from './components/JobLists';
 import JobProcess from './components/JobProcess';
 import Leads from './components/Leads';
 import Navbar from './components/Navbar';
@@ -12,7 +13,9 @@ const App = () => {
         <Navbar />
         <Hero />
         <Companies />
-        <JobProcess /><Leads />
+        <JobProcess />
+        <Leads />
+        <JobLists />
       </Container>
     
       {/* <Container maxWidth="xl" sx={{bgcolor: "#F7FAFF"}}>
