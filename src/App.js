@@ -15,7 +15,11 @@ const App = () => {
         <Hero />
         <Companies />
         <JobProcess />
-        <Leads />
+
+        <Container maxWidth="xl" sx={{bgcolor: "#F7FAFF",paddingY:4}}>
+          <Leads />
+        </Container>
+
         <JobLists />
       
       <Container maxWidth="xl" sx={{bgcolor: "#F7FAFF",paddingY:8}}>

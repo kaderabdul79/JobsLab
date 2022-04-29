@@ -2,7 +2,7 @@ import { Container, Grid, Box, Typography} from '@mui/material';
 
 const Leads = () => {
     return (
-        <Container maxWidth="xl" sx={{bgcolor: "#F7FAFF"}}>
+        <Container maxWidth="lg">
             <Grid container spacing={2}>
                 <Grid item xs={6} md={8} sx={{display:'flex',alignItems:'center'}}>
                     <Box>

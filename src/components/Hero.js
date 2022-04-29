@@ -3,7 +3,7 @@ import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
 
 const Hero = () => {
     return (
-        <Container maxWidth="xl" sx={{bgcolor: "#F7FAFF"}}>
+        <Container maxWidth="lg" sx={{bgcolor: "#F7FAFF"}}>
             <Grid container spacing={2}>
                 <Grid item xs={6} md={8} sx={{display:'flex',alignItems:'center'}}>
                     <Box>

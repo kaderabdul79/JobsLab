@@ -1,9 +1,10 @@
 import { AccessTime, ArrowRightAlt, LocationOn } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, Grid, Link, Paper, Typography } from '@mui/material';
+import { Box, Button, Card, CardContent, Grid, Link, Paper, Typography, Container  } from '@mui/material';
 import React from 'react';
 
 const JobLists = () => {
     return (
+        <Container maxWidth="lg">
         <Box my={9}>
 
             <Typography mb={1} variant='h4'>Top developer jobs listed in our portal</Typography>
@@ -135,6 +136,7 @@ const JobLists = () => {
             </Grid>
 
         </Box>
+       </Container> 
     );
 };                                                                                                                                      
 
