@@ -37,7 +37,10 @@ const Navbar = () => {
                     {/* <Link href="login" underline="none"><Button disableElevation variant="contained">Login</Button></Link> */}
                     {
                         user?.email ?
+                        <Box>
+                            <Button href="dashboard" color="inherit">Dashboard</Button>
                             <Button onClick={logout} color="inherit">Logout</Button>
+                        </Box>    
                             :
                             <Link href="login" underline="none"><Button disableElevation variant="contained">Login</Button></Link>
                     }

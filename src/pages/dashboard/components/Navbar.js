@@ -1,4 +1,4 @@
-import { AppBar, Button, Collapse, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Toolbar, Container, Link } from '@mui/material';
+import { AppBar, Button, Collapse, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Toolbar, Container, Link, Avatar } from '@mui/material';
 import {Drafts, ExpandLess, ExpandMore, Inbox, Menu, Send, StarBorder} from '@mui/icons-material';
 import Typography from '@mui/material/Typography';
 import styled from '@emotion/styled';
@@ -34,15 +34,18 @@ const Navbar = () => {
   }, [open]);
     
     return (
-        <Container maxWidth="lg">
-            <Toolbar variant="dense" disableGutters={true} sx={{ display: 'flex',justifyContent: 'space-between' }}>
-                <Box>
-                    <Link href="/" underline="none"><Typography variant='h6'>JobLab.</Typography></Link>
-                </Box>
+        <Container maxWidth="lg" sx={{ boxShadow: 1 }}>
+            <Toolbar disableGutters={true} sx={{ display: 'flex',justifyContent: 'space-between' }}>
+                <Link href="/" underline="none"><Typography variant='h6'>JobLab.</Typography></Link>
                
                 <Box sx={{ display: {xs:"none",sm:"block"} }}>
                   {
-                    user?.email ? <Button ref={anchorRef} onClick={handleToggle}>{user.displayName}</Button>
+                    user?.email ? 
+                  <Stack direction="row">
+                    <Avatar alt="A.Kader" src={user.photoURL} />
+                    <Button ref={anchorRef} onClick={handleToggle}>{user.displayName}</Button>
+                  </Stack>
+                    
                     : ''
                   }
                   

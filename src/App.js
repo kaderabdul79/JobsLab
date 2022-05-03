@@ -11,8 +11,11 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
-import AllJobs from "./pages/dashboard/AllJobs";
+import JobsList from "./pages/dashboard/JobsList";
+import AddNewJob from "./pages/dashboard/AddNewJob";
+import Statistics from "./pages/dashboard/Statistics";
 import Profile from "./pages/dashboard/Profile";
+import DashboardHome from "./pages/dashboard/DashboardHome";
 
 
 const App = () => {
@@ -21,25 +24,26 @@ const App = () => {
       {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* private route */}
-          <Route path="jobs" element={
-            <PrivateRoute>
-              <Jobs />
-            </PrivateRoute>
-          }
-          />
+
+          <Route path="jobs" element={<PrivateRoute><Jobs /></PrivateRoute>}/>
+
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          {/* dashboard */}
-          <Route path="dashboard"  element={<PrivateRoute><Dashboard /></PrivateRoute>}>
-              <Route index element={<Profile />}></Route>
-              <Route path="stats" element={<Dashboard />} />
-              <Route path="alljob" element={<AllJobs />} />
-          </Route>
-          {/* dashboard */}
+
+          <Route path="/dashboard" element={<PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>}>
+              <Route path={`/dashboard/stats`} element={<DashboardHome></DashboardHome>} /> 
+              <Route path={`/dashboard/alljob`} element={<JobsList></JobsList>} /> 
+              <Route path={`/dashboard/addjob`} element={<AddNewJob></AddNewJob>} />  
+              <Route path={`/dashboard/profile`} element={<Profile></Profile>} />  
+              {/* <Route path={`/dashboard/alljob/:jobId`} element={} />  */}
+              
+              </Route>
+
         </Routes>
       {/* <Footer /> */}
     </AuthProvider>
