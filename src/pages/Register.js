@@ -29,8 +29,8 @@ const Register = () => {
             alert('Your password did not match');
             return
         }
-        console.log(loginData.email, loginData.password)
-        registerUser(loginData.email, loginData.password);
+        // console.log(loginData.email, loginData.password)
+        registerUser(loginData.email, loginData.password, loginData.name, navigate);
         e.preventDefault();
     }
     return (

@@ -3,8 +3,6 @@ import {Drafts, ExpandLess, ExpandMore, Inbox, Menu, Send, StarBorder} from '@mu
 import Typography from '@mui/material/Typography';
 import styled from '@emotion/styled';
 import { Box } from '@mui/system';
-// import DrawerBar from './DrawerBar';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Grow from '@mui/material/Grow';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
@@ -13,13 +11,11 @@ import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 
 import { useEffect, useRef, useState } from 'react';
-
-// const StyledToolbar = styled(Toolbar)({
-//     display: "flex",
-//     justifyContent:"space-between"
-// })
+import useAuth from '../../../hooks/useAuth';
 
 const Navbar = () => {
+    const { user, logout } = useAuth();
+
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
   
@@ -27,13 +23,6 @@ const Navbar = () => {
       setOpen((prevOpen) => !prevOpen);
     };
   
-    const handleClose = (event) => {
-      if (anchorRef.current && anchorRef.current.contains(event.target)) {
-        return;
-      }
-  
-      setOpen(false);
-    };  
     const prevOpen = useRef(open);
 
     useEffect(() => {
@@ -52,15 +41,16 @@ const Navbar = () => {
                 </Box>
                
                 <Box sx={{ display: {xs:"none",sm:"block"} }}>
-                    <Button ref={anchorRef} onClick={handleToggle}>Hello, A.Kader</Button>
-
-                    <Popper open={open}  anchorEl={anchorRef.current}>
+                  {
+                    user?.email ? <Button ref={anchorRef} onClick={handleToggle}>{user.displayName}</Button>
+                    : ''
+                  }
+                  
+                <Popper open={open}  anchorEl={anchorRef.current}>
                     <Paper>
-                    <ClickAwayListener onClickAway={handleClose}>
                     <MenuList>
-                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        <MenuItem onClick={logout}>Logout</MenuItem>
                     </MenuList>
-                    </ClickAwayListener>
                 </Paper>
               </Popper>
                 </Box>

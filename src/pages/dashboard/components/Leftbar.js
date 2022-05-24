@@ -1,6 +1,5 @@
 import { AccountCircle, Add, BarChart, ClearAll, Delete, Home, Message, ModeNight, Pets, Shop, Store } from "@mui/icons-material";
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from "@mui/material";
-import React from "react";
 
 const LeftBar = () => {
   return (

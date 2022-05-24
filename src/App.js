@@ -11,6 +11,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AllJobs from "./pages/dashboard/AllJobs";
+import Profile from "./pages/dashboard/Profile";
 
 
 const App = () => {
@@ -31,7 +33,13 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          {/* <Route path="dashboard" element={<Dashboard />} /> */}
+          {/* dashboard */}
+          <Route path="dashboard"  element={<PrivateRoute><Dashboard /></PrivateRoute>}>
+              <Route index element={<Profile />}></Route>
+              <Route path="stats" element={<Dashboard />} />
+              <Route path="alljob" element={<AllJobs />} />
+          </Route>
+          {/* dashboard */}
         </Routes>
       {/* <Footer /> */}
     </AuthProvider>

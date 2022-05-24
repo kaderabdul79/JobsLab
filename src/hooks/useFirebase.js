@@ -1,6 +1,7 @@
 import initializeFirebase from '../Firebase/firebase.init';
 import { useState, useEffect } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, getIdToken } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 
 // initialize firebase app
@@ -13,16 +14,44 @@ const useFirebase = () => {
 
     const auth = getAuth();
     const googleprovider = new GoogleAuthProvider();
+    const navigate = useNavigate();
 
-    const registerUser = (email, password) => {
+    // const registerUser = (email, password,name, navigate) => {
+    //     setIsLoading(true);
+    //     createUserWithEmailAndPassword(auth, email, password)
+    //         .then((userCredential) => {
+    //             setAuthError('');
+    //             const newUser = { email, displayName: name };
+    //             setUser(newUser);
+    //             navigate('/');
+    //         })
+    //         .catch((error) => {
+    //             setAuthError(error.message);
+    //             console.log(error.message);
+    //         })
+    //         .finally(() => setIsLoading(false));
+    // }
+
+    const registerUser = (email, password, name, navigate) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setAuthError('');
+                const newUser = { email, displayName: name };
+                setUser(newUser);
+                // save user to the database
+                // saveUser(email, name, 'POST');
+                // send name to firebase after creation
+                // updateProfile(auth.currentUser, {
+                //     displayName: name
+                // }).then(() => {
+                // }).catch((error) => {
+                // });
+                navigate('/');
             })
             .catch((error) => {
                 setAuthError(error.message);
-                console.log(error.message);
+                console.log(error);
             })
             .finally(() => setIsLoading(false));
     }
@@ -47,6 +76,7 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user)
+                navigate('/');
                 // console.log(user)
                 // 
                 // createUserAcc(user.email,user.displayName,'PUT')
