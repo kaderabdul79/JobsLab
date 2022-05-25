@@ -30,7 +30,7 @@ const Navbar = () => {
                 <Box sx={{ display: {xs:"none",sm:"block"} }}>
                     <Box sx={{display: 'flex',gap:5,alignItems:'center'}}>
                     <Link href="jobs" underline="none"><Typography variant='span'>Jobs</Typography></Link>
-                    <Link href="blog" underline="none"><Typography variant='span'>Blog</Typography></Link>
+                    {/* <Link href="blog" underline="none"><Typography variant='span'>Blog</Typography></Link> */}
                     <Link href="about" underline="none"><Typography variant='span'>About</Typography></Link>
                     <Link href="contact" underline="none"><Typography variant='span'>Contact</Typography></Link>
                     
