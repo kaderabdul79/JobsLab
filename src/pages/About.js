@@ -10,7 +10,7 @@ const About = () => {
         {id:4,name:'Albi',whatheSaid: "Job was worth a fortune to my company. We can't understand how we've been living without job.",photoUrl:'https://img.freepik.com/free-photo/young-attractive-asian-business-man-wearing-navy-blue-suit-with-white-shirt-necktie-sitting-down-executive-chair-making-confident-face-office-with-natural-lighting_102814-2054.jpg?w=360'}
     ]
     return (
-        <Container maxWidth="md" sx={{bgcolor: "#F7FAFF",paddingY:2}}>
+        <Container maxWidth="lg">
             <Navbar />
         <Grid container spacing={2} sx={{paddingY:3}}>
             <Grid item xs={8}>
