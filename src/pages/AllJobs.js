@@ -3,11 +3,14 @@ import { Box, Button, Card, CardContent, Grid, Link, Paper, Typography, Containe
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import {jobsData} from '../dummyData';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const AllJobs = () => {
     let navigate = useNavigate();
     return (
         <Container maxWidth="lg">
+            <Navbar />
         <Box>
             <Grid container spacing={3}  my={2}>
                 {
@@ -34,6 +37,7 @@ const AllJobs = () => {
             </Grid>
 
         </Box>
+        <Footer />
        </Container> 
     );
 };                                                                                                                                      

@@ -1,5 +1,7 @@
 import { Button, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Contact = () => {
     const [contactData,setContactData] = useState({})
@@ -12,8 +14,9 @@ const Contact = () => {
         e.preventDefault();
     }
     return (
-        <Container>
-            <Grid sx={{marginTop:8}} container spacing={2}>
+        <Container maxWidth="lg">
+            <Navbar />
+            <Grid sx={{marginY:8}} container spacing={2}>
                 <Grid item xs={12} md={3}></Grid>
                 <Grid item xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>Get In Touch</Typography>
@@ -39,6 +42,7 @@ const Contact = () => {
                 </Grid>
                 <Grid item xs={12} md={3}></Grid>
             </Grid>
+            <Footer />
         </Container>
     );
 };
